@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
-  def index
-  end
+	def index
+		@search_term = "chocolate"
+		@recipes = Recipe.for(@search_term)
+	end
 end
