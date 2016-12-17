@@ -6,13 +6,13 @@
 	<tr>
 		<th>Image</th>
 		<th>Name</th>
-		<th>Ingredients</th>
+		<th>Social rank</th>
 	</tr>
 	<% @recipes.each do |recipe| %>
-		<tr>
+		<tr class=<%= cycle('even', 'odd') %>>
 			<td><%= image_tag(recipe["image_url"]) %></td>
 			<td><%= recipe["title"] %></td>
-			<td><%= recipe["ingredients"] %></td>
+			<td><%= formatted_rank(recipe["social_rank"]) %></td>
 		</tr>
 	<% end %>
 </table>
