@@ -1,6 +1,8 @@
-<!-- <h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p> -->
 <h1>Searching for - <%= @search_term %></h1>
+
+<% if @recipes.nil? %>
+<p>No course found with relevant information... Sorry</p>
+<% else %>
 
 <table border="1">
 	<tr>
@@ -16,3 +18,5 @@
 		</tr>
 	<% end %>
 </table>
+
+<% end %>
