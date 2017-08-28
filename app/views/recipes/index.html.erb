@@ -1,22 +1,22 @@
-<h1>Searching for - <%= @search_term %></h1>
-
-<% if @recipes.nil? %>
-<p>No course found with relevant information... Sorry</p>
+<% provide(:home, 'active') %>
+<% provide(:title, 'Home') %>
+<% provide(:enabled_examples, 'true') %>
+<h2>Searching for - <%= @search_term %></h2>
+<% if @recipes.nil? or @recipes == [] %>
+  <p><h2>No recipes found with <%= @search_term %></h2></p>
 <% else %>
-
-<table border="1">
-	<tr>
-		<th>Thumbnail of the recipe</th>
-		<th>Title</th>
-		<th>Social rank</th>
-	</tr>
-	<% @recipes.each do |recipe| %>
-		<tr class=<%= cycle('even', 'odd') %>>
-			<td><%= link_to(image_tag(recipe["image_url"], size: "100x100"), recipe["source_url"]) %></td>
-			<td><%= link_to(sanitize(recipe["title"]), recipe["source_url"]) %></td> <!-- THE SAME: strict_tags(recipe[""]).html_safe -->
-			<td><%= formatted_rank(recipe["social_rank"]) %></td>
-		</tr>
-	<% end %>
-</table>
-
+  <table border=".5">
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Social rank</th>
+    </tr>
+    <% @recipes.each do |recipe| %>
+      <tr class=<%= cycle('even', 'odd') %>>
+        <td><%= link_to(image_tag(recipe['image_url'], size: '100x100'), recipe['source_url']) unless recipe['image_url'].blank? %></td>
+        <td><%= link_to(sanitize(recipe['title']), recipe['source_url']) %></td>
+        <td><span class="pull-right badge badge-important" style='margin-right: 16px'><%= formatted_rank(recipe['social_rank']) %></span></td>
+      </tr>
+    <% end %>
+  </table>
 <% end %>
