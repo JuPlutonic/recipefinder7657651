@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The app for searching recipes... (you could also use ?looking_for= in URL ...)
+See the app in the wild: [https://recipefinder7657651.herokuapp.com/] (url)
 
-Things you may want to cover:
+TODO:
 
-* Ruby version
+* Nested forms, install the gem
 
-* System dependencies
+* Replace Twitter Bootstrap 3 with Bootstrap 4
 
-* Configuration
+* Better javascript on search form
 
-* Database creation
+Conf:
 
-* Database initialization
+* Ruby version ::put this line in Gemfile!: ruby "2.4.1", :patchlevel => "111"
 
-* How to run the test suite
+* Rails 5.0.1
 
-* Services (job queues, cache servers, search engines, etc.)
+* Configuration ::Gemset file / Heroku don't need 12_apps gem (in prod-n) if you use Rails 5.0.0.1
 
-* Deployment instructions
-
-* ...
+* heroku config:set FOOD2FORK_KEY="..........."
