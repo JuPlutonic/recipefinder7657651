@@ -1,13 +1,13 @@
 == README
 
 The app for searching recipes... (you could also use ?looking_for= in URL ...)
-See the app in the wild: [https://recipefinder7657651.herokuapp.com/] (url)
+See the app in the wild: [url](https://recipefinder7657651.herokuapp.com/)
 
 TODO:
 
 * Nested forms, install the gem
 
-* Replace Twitter Bootstrap 3 with Bootstrap 4
+* Replace Twitter Bootstrap 3 with Bootstrap 4 and [Paper Kit 2](http://demos.creative-tim.com/paper-kit)
 
 * Better javascript on search form
 
@@ -22,5 +22,4 @@ Conf:
 * heroku config:set FOOD2FORK_KEY="..........."
 
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
