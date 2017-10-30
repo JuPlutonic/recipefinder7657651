@@ -41,7 +41,7 @@
               <div class="form-group col-md-8 col-md-offset-2">
               <!--<button class="btn btn-danger btn-sm" name="button" type="submit">Search recipes</button>-->
                <%# = button_tag "Search recipes", class: "btn btn-danger btn-sm", data: {disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Searching…"} %>
-               <%= button_to update_span_recipe_path, method: patch, remote: true, class: "btn btn-danger btn-sm", data: {disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i><script>$("#span<%=@button_clicks%>").text("<%= @search_term %>");</script> Searching..."}, %>
+               <%= button_to update_span_recipe_path, method: patch, remote: true, class: "btn btn-danger btn-sm", data: {disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Searching..."}, %>
               </div>
             </div>
           <% end %>
