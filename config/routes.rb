@@ -15,6 +15,11 @@
 Rails.application.routes.draw do
   get 'recipes/index'
   root 'recipes#index'
+  resources :recipes do
+    member do
+      patch :update_span
+    end
+  end
   get 'greeter/hello'
   get 'greeter/goodbye'
   get 'contact' => 'recipes#contact', as: :contact
