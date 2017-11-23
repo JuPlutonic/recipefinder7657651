@@ -9,11 +9,6 @@ class RecipesController < ApplicationController
     @recipes = Recipe.for(@search_term) || []
   end
 
-  def update_span
-    @button_clicks ||= 1
-    (@button_clicks % 3).zero? ? @button_clicks = 1 : @button_clicks += 1
-  end
-
   # def add
   #   @recipe = Recipe.find_by(f2f_id: params[:f_id])
   #   unless @recipe
