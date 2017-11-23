@@ -4,7 +4,7 @@ RecipeFinder
 ================
 
 The app for searching recipes... (you could also use ?looking_for= in URL ...)
-[![See the app in the wild](https://www.herokucdn.com/deploy/button.png)](https://recipefinder7657651.herokuapp.com/)
+[![See the app in the wild](https://heroku-elements.s3.amazonaws.com/buttons/uploaded_logos/000/017/137/icon/heroku_webhooks.png?1511395615)](https://recipefinder7657651.herokuapp.com/)
 
 Conf:
 ---------------
