@@ -1,21 +1,17 @@
 # README
 
+RecipeFinder
+================
+
 The app for searching recipes... (you could also use ?looking_for= in URL ...)
-See the app in the wild: [url](https://recipefinder7657651.herokuapp.com/)
-
-TODO:
-
-* Nested forms, install the gem
-
-* Replace Twitter Bootstrap 3 with Bootstrap 4 and [Paper Kit 2](http://demos.creative-tim.com/paper-kit)
-
-* Better javascript on search form
+[![See the app in the wild](https://www.herokucdn.com/deploy/button.png)](https://recipefinder7657651.herokuapp.com/)
 
 Conf:
+---------------
 
 * Ruby version ::put this line in Gemfile!: ruby "2.4.1", :patchlevel => "111"
 
-* Rails 5.0.1
+* Rails 5.0.6
 
 * Configuration ::Gemset file / Heroku don't need 12_apps gem (in prod-n) if you use Rails 5.0.0.1
 
