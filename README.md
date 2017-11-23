@@ -1,12 +1,10 @@
 # README
 
 ## RecipeFinder
-================
 
 The app for searching recipes... (you could also use ?looking_for= in URL ...)
 
 ## See the app in the wild: [![See the app in the wild](https://icons.duckduckgo.com/ip3/elements.heroku.com.ico)](https://recipefinder7657651.herokuapp.com/)
----------------
 
 ## Conf:
 ---------------
