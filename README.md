@@ -1,12 +1,14 @@
 # README
 
-RecipeFinder
+## RecipeFinder
 ================
 
 The app for searching recipes... (you could also use ?looking_for= in URL ...)
-[![See the app in the wild](https://heroku-elements.s3.amazonaws.com/buttons/uploaded_logos/000/017/137/icon/heroku_webhooks.png?1511395615)](https://recipefinder7657651.herokuapp.com/)
 
-Conf:
+## See the app in the wild: [![See the app in the wild](https://icons.duckduckgo.com/ip3/elements.heroku.com.ico)](https://recipefinder7657651.herokuapp.com/)
+---------------
+
+## Conf:
 ---------------
 
 * Ruby version ::put this line in Gemfile!: ruby "2.4.1", :patchlevel => "111"
