@@ -1,5 +1,6 @@
 inherit_from: .rubocop_todo.yml
 AllCops:
+  CacheRootDirectory: /media/salessionato/Ruby/.cache
   TargetRubyVersion: 2.4
   Exclude:
     - 'vendor/**/*'
@@ -10,8 +11,8 @@ AllCops:
     - 'bin/**/*'
     - 'generator_templates/**/*'
     - 'builds/**/*'
-  Rails:
-    Enabled: true
+#  Rails:
+#    Enabled: true
 
 # Gems in consecutive lines should be alphabetically sorted
 Bundler/OrderedGems:
@@ -37,8 +38,6 @@ Style/FrozenStringLiteralComment:
     - 'config.ru'
     - 'Gemfile'
     - 'Rakefile'
-
-
 
 # This cops checks the indentation of the here document bodies.
 Layout/IndentHeredoc:

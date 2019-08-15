@@ -22,6 +22,7 @@
 
 .irb_saved_history
 .rubocop.yml
+.rubocop_todo.yml
 .editorconfig
 .byebug_history
 
@@ -39,3 +40,4 @@
 
 .ruby-gemset
 .ruby-version
+Gemfile.lock.example

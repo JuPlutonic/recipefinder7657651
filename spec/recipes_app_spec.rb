@@ -1,10 +1,14 @@
+require 'rails_helper'
+
+# Capybara.current_driver = :selenium
 Capybara.default_driver = :poltergeist
+Capybara.use_default_driver
 
 Capybara.app_host = 'http://localhost:3000'
 
 describe 'Recipes App' do
-  it "displays 'Kahlúa-Spiked' when request parameter 'search' is mocha" do
-    visit '?search=mocha'
+  it "displays 'Kahlua' when request parameter 'search' is mocha" do
+    visit '?looking_for=mocha'
     expect(page).to have_content 'Kahlúa-Spiked'
   end
 
@@ -21,8 +25,8 @@ describe 'Recipes App' do
   context 'visit root' do
     before { visit '/' }
 
-    it 'displays chocolate (default)' do
-      expect(page).to have_content 'Chocolate'
+    it 'displays celery root (default)' do
+      expect(page).to have_content 'Celery Root Timbales'
     end
 
     it "displays 'Powered By Food2Fork.com'" do
@@ -43,18 +47,18 @@ describe 'Recipes App' do
   end
 end
 
-def text_in_dirs(filepath, text)
+def text_in_dirs(file_path, text)
   dcount = 0
-  # Dir.chdir(filepath)
-  Dir["#{filepath}/**/*.rb"].each do |fname|
+  # Dir.chdir(file_path)
+  Dir["#{file_path}/**/*.rb"].each do |fname|
     dcount += text_in_file(fname, text)
   end
   dcount
 end
 
-def text_in_file(fileName, text)
+def text_in_file(file_name, text)
   count = 0
-  file = File.open(fileName, 'r')
+  file = File.open(file_name, 'r')
   file.each_line do |line|
     count += 1 if line.include? text
   end

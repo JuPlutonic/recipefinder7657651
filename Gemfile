@@ -8,19 +8,16 @@ gem 'rails', '~> 5.0.0', '>= 5.0.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'capybara', '~> 2.4.4'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'font-awesome-rails'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'json', '2.0.2'
-gem 'phantomjs', '~> 1.9.8.0'
-gem 'poltergeist', '~> 1.6.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # gem 'sdoc', '>= 0.4.0', group: :doc
@@ -30,22 +27,33 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  # gem 'selenium-webdriver'
 end
 
 group :development do
   gem 'annotate', require: false
+
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
   gem 'listen', '~> 3.0.5'
   # gem 'oink'
-  gem 'rubocop'
+  gem 'rubocop', require: false
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # `thin start --ssl`, in any ENV run `rails s thin`
-  gem 'thin'
+  # gem 'thin'
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
+end
+
+group :test do
+  gem 'capybara', '~> 2.4.4'
+  gem 'phantomjs', '~> 2', require: 'phantomjs/poltergeist'
+  gem 'poltergeist', '~> 1.6.0'
 end
 
 # group :production do
