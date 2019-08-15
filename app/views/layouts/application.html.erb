@@ -25,23 +25,34 @@
       <div class="row">
         <div class="col-md-3 well">
           <p class="text-uppercase"><strong>Some Favorites</strong></p>
-          <span><a class="badge badge-default" href="http://www.pairuptocode.com/exercises/bootstrap_before.html#">Celery Root</a></span>
-          <span><a class="badge badge-default" href="http://www.pairuptocode.com/exercises/bootstrap_before.html#">Spaghetti Squash</a></span>
-          <span><a class="badge badge-default" href="http://www.pairuptocode.com/exercises/bootstrap_before.html#">Killer Mushrooms</a></span>
-          <%= form_tag('/', class: 'form-inline', method: 'get') do %>
+          <span id="snan_ n1">
+            <a class="badge badge-default" href="http://www.pairuptocode.com/exercises/bootstrap_before.html#">Celery Root</a></span>
+          <span id = "span_n2">
+            <a class="badge badge-default" href="http://www.pairuptocode.com/exercises/bootstrap_before.html#">Spaghetti Squash</a></span>
+          <span id = "span_n3">
+            <a class="badge badge-default" href="http://www.pairuptocode.com/exercises/bootstrap_before.html#">Killer Mushrooms</a></span>
+
             <div class="row">
               <div class="form-group col-md-8 col-md-offset-2">
-                <%= text_field_tag :looking_for, @search_term, placeholder: "Enter veggie's name", class: 'input input-sm', style: 'width: 100%' %>
               </div>
             </div>
+
+          <%= form_tag('/', class: 'form-inline', method: 'get') do %>
+
+            <div class="row">
+              <div class="form-group col-md-8 col-md-offset-2">
+                <%= text_field_tag :looking_for, @search_term, placeholder: "Enter veggie's name", id: 'input_sm_field', class: 'input input-sm', style: 'width: 100%' %>
+              </div>
+            </div>
+
             <div class="row">
               <div class="form-group col-md-8 col-md-offset-2">
               <!--<button class="btn btn-danger btn-sm" name="button" type="submit">Search recipes</button>-->
-               <%= button_tag "Search recipes", class: "btn btn-danger btn-sm", data: {disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Searching…"} %>
+               <%= button_tag 'Search', type: 'submit', id: 'btn_sm_button', class: 'btn btn-danger btn-sm', data: {disable_with: "<i class='fa fa-circle-o-notch fa-spin'></i> Searching…"} %>
               </div>
             </div>
-          <% end %>
 
+          <% end %>
         </div>
         <div class="col-md-9">
           <% content_for :examples do %>
@@ -50,20 +61,14 @@
             <strong>Well!</strong> Have you had your daily dose of veggies today??
           </div>
           <% end %>
-          <% if yield(:enabled_examples) == 'true' %>
-          <%= yield(:examples) %>
-          <% end %>
+          <%= yield(:examples) if yield(:enabled_examples) == 'true' %>
           <blockquote>
             <p>Take care of your body. It's the only place you've to live
             </p>
             <small>Jim Rohn</small>
           </blockquote>
         </div>
-
-        <% if yield(:enabled_examples) == 'true' %>
-        <%= render 'shared/examples' %>
-        <% end %>
-
+        <%= render 'shared/examples' if yield(:enabled_examples) == 'true' %>
       </div>
     </div>
     <div class="container"><%= yield %></div>
@@ -71,6 +76,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        <% session[:button_clicks] ||= 3%>
+        function count() {
+          <% (session[:button_clicks] % 3).zero? ? session[:button_clicks] = 1 : session[:button_clicks] += 1 %>
+          $("#span_n<%=session[:button_clicks].to_s%>").html("<a class='badge badge-default' href='<%= request.original_url%>'><%= @search_term %></a>");
+        }
+
+        $('#btn_sm_button').click(
+          function() {
+            count();
+        });
+      });
+    </script>
   </body>
   <hr>
   <footer>

@@ -8,6 +8,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 gem 'font-awesome-rails'
