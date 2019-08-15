@@ -20,7 +20,22 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore Byebug command history file.
+.irb_saved_history
+.rubocop.yml
+.editorconfig
 .byebug_history
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
+/node_modules
+ /yarn-error.log
+
+/public/assets
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
 .ruby-gemset
 .ruby-version
