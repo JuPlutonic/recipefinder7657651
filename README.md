@@ -12,7 +12,7 @@ The app for searching recipes... (you could also use ?looking_for= in URL ...)
 
 ---
 
-* Ruby version (put this line in Gemfile): ruby '2.4.6'
+* Ruby version (put this line in Gemfile): ruby '2.4.9'
 
 * Rails 5.0.7.2
 
