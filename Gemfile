@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.4.9'
+ruby '2.6.7'
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications (http://puma.io)
-gem 'puma', '~> 3'
+gem 'puma', '>= 4.3.8'
 # Full-stack web application framework. (https://rubyonrails.org)
-gem 'rails', '>= 5.0.2'
+gem 'rails', '= 5.2.4.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -19,11 +19,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'therubyracer', platforms: :ruby
 # Use jQuery with Rails 4+ (https://github.com/rails/jquery-rails)
 gem 'jquery-rails'
-# JSON implementation for JRuby (http://json-jruby.rubyforge.org/)
-gem 'json', '2.0.2'
-# Sass adapter for the Rails asset pipeline. (https://github.com/rails/sass-rails)
-gem 'sass-rails', '~> 5.0'
-# gem 'sdoc', '>= 0.4.0', group: :doc
+# JSON Implementation for Ruby (http://flori.github.com/json)
+gem 'json', '>= 2.3.0'
+# Integrate SassC-Ruby into Rails. (https://github.com/sass/sassc-rails)
+gem 'sassc-rails'
+ gem 'sdoc', '>= 0.4.0', group: :doc
 # Turbolinks makes navigating your web application faster (https://github.com/turbolinks/turbolinks)
 gem 'turbolinks', '~> 5'
 # Ruby wrapper for UglifyJS JavaScript compressor (http://github.com/lautis/uglifier)
@@ -44,15 +44,18 @@ group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # Ruby fast debugger - base + CLI (http://github.com/deivid-rodriguez/byebug)
   gem 'byebug', platform: :mri
+  # Guard gem for RSpec (https://github.com/guard/guard-rspec)
+  gem 'guard-rspec', require: false
   # Listen to file modifications (https://github.com/guard/listen)
   gem 'listen', '~> 3.0.5'
+  # Rails plugin and log parser to help narrow down the source(s) of increased memory usage in rails application (https://github.com/noahd1/oink)
   # gem 'oink'
-  # Automatic Ruby code style checking tool. (http://github.com/bbatsov/rubocop)
-  gem 'rubocop', require: false
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # Rails application preloader (https://github.com/rails/spring)
   gem 'spring'
+  # rspec command for spring (https://github.com/jonleighton/spring-commands-rspec)
+  gem 'spring-commands-rspec'
   # Makes spring watch files using the listen gem. (https://github.com/jonleighton/spring-watcher-listen)
   gem 'spring-watcher-listen', '~> 2.0.0'
   # `thin start --ssl`, in any ENV run `rails s thin`
@@ -71,11 +74,6 @@ group :test do
   # PhantomJS driver for Capybara (https://github.com/teampoltergeist/poltergeist)
   gem 'poltergeist', '~> 1.6.0'
 end
-
-# group :production do
-#   gem 'pg'
-#   gem 'sqlite3'
-# end
 
 # Makes http fun! Also, makes consuming restful web services dead easy. (http://jnunemaker.github.com/httparty)
 gem 'httparty', '>=0.13.5'
